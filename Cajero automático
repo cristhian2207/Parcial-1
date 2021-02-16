@@ -1,0 +1,241 @@
+using System;
+
+namespace cajero1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //El inicio, comenzamos por dar la bienvenida y mostrar el menú
+
+            Console.WriteLine("Bienvenido al cajero automatico");
+            Console.WriteLine("Digite (1) si su banco es  FDP IVERSMENTS");
+            Console.WriteLine("Digite (2) si su banco es otro");
+            Console.WriteLine("Digite (3) para cancelar");
+            string menu;
+
+            menu = Console.ReadLine();
+            long opciones = Convert.ToInt64(menu);
+
+            //Le pedimos al usuario que introduzca la cantidad
+            if (opciones == 1)
+            {
+                Console.Clear();
+                Console.WriteLine("Diga la cantidad a retirar");
+                
+                string monto;
+                monto = Console.ReadLine();
+
+                long montos = Convert.ToInt64(monto);
+
+                if (montos <= 20000)
+                {
+
+                    if (montos / 1000 == 1)
+                    {
+                        Console.WriteLine(montos / 1000 + " Billetes de 1000 pesos");
+                    }
+                    else if(montos / 1000 >= 1 && montos / 1000 <= 18)
+                    {
+                        Console.WriteLine(montos / 1000 +" Billetes de 1000 pesos");
+
+                    }
+
+                    else if (montos / 1000 >= 18)
+                    {
+                        Console.WriteLine(0 + " Billetes de 1000 pesos");
+
+                    }
+
+                    montos %= 1000;
+
+
+
+
+                    if (montos / 500 == 1)
+                    {
+                        Console.WriteLine(montos / 500 + " Billetes de 500 pesos");
+                    }
+                    else if (montos / 500 >= 1 && montos / 500 <= 19)
+                    {
+                        Console.WriteLine(montos / 500 + " Billetes de 500 pesos");
+
+                    }
+
+                    else if (montos / 500 >= 19)
+                    {
+                        Console.WriteLine(0 + " Billetes de 500 pesos");
+
+                    }
+                    montos %= 500;
+
+
+
+                    if (montos / 200 == 1)
+                    {
+                        Console.WriteLine(montos / 200 + " Billete de 200 pesos");
+                    }
+                    else if (montos / 200 >= 1 && montos / 200 <= 23)
+                    {
+                        Console.WriteLine(montos / 200 + " Billetes de 200 pesos");
+
+                    }
+
+                    else if (montos / 200 >= 23)
+                    {
+                        Console.WriteLine(0 + " Billetes de 200 pesos");
+
+                    }
+
+                    montos %= 200;
+
+
+                    if (montos / 100 == 1)
+                    {
+                        Console.WriteLine(montos / 100 + " Billete de 100 pesos");
+                    }
+                    else if (montos /100 >= 1 && montos / 100 <= 50)
+                    {
+                        Console.WriteLine(montos / 100 + " Billetes de 100 pesos");
+
+                    }
+
+                    else if (montos / 100 >= 50)
+                    {
+                        Console.WriteLine(0 + " Billetes de 100 pesos");
+
+                    }
+                    montos %= 100;
+
+
+
+
+
+                }
+                else {
+                    Console.WriteLine("Usted no cuenta con saldo suficiente para realizar esta transacción");
+
+                }
+                
+
+            }
+
+            if (opciones == 2)
+            {
+                Console.Clear();
+
+
+                Console.WriteLine("Digite el monto a retirar");
+
+                string monto;
+                monto = Console.ReadLine();
+
+                long montos = Convert.ToInt64(monto);
+
+                if (montos <= 10000)
+                {
+
+                    if (montos / 1000 == 1)
+                    {
+                        Console.WriteLine(montos / 1000 + " Billetes de 1000 pesos");
+                    }
+                    else if (montos / 1000 >= 1 && montos / 1000 <= 18)
+                    {
+                        Console.WriteLine(montos / 1000 + " Billetes de 1000 pesos");
+
+                    }
+
+                    else if (montos / 1000 >= 18)
+                    {
+                        Console.WriteLine(0 + " Billetes de 1000 pesos");
+
+                    }
+
+                    montos %= 1000;
+
+
+
+
+                    if (montos / 500 == 1)
+                    {
+                        Console.WriteLine(montos / 500 + " Billetes de 500 pesos");
+                    }
+                    else if (montos / 500 >= 1 && montos / 500 <= 19)
+                    {
+                        Console.WriteLine(montos / 500 + " Billetes de 500 pesos");
+
+                    }
+
+                    else if (montos / 500 >= 19)
+                    {
+                        Console.WriteLine(0 + " Billetes de 500 pesos");
+
+                    }
+                    montos %= 500;
+
+
+
+                    if (montos / 200 == 1)
+                    {
+                        Console.WriteLine(montos / 200 + " Billete de 200 pesos");
+                    }
+                    else if (montos / 200 >= 1 && montos / 200 <= 23)
+                    {
+                        Console.WriteLine(montos / 200 + " Billetes de 200 pesos");
+
+                    }
+
+                    else if (montos / 200 >= 23)
+                    {
+                        Console.WriteLine(0 + " Billetes de 200 pesos");
+
+                    }
+
+                    montos %= 200;
+
+
+                    if (montos / 100 == 1)
+                    {
+                        Console.WriteLine(montos / 100 + " Billete de 100 pesos");
+                    }
+                    else if (montos / 100 >= 1 && montos / 100 <= 50)
+                    {
+                        Console.WriteLine(montos / 100 + " Billetes de 100 pesos");
+
+                    }
+
+                    else if (montos / 100 >= 50)
+                    {
+                        Console.WriteLine(0 + " Billetes de 100 pesos");
+
+                    }
+                    montos %= 100;
+
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Usted no cuenta con saldo suficiente para realizar esta transacción");
+
+                }
+
+
+            }
+
+            if (opciones == 3)
+            {
+                Environment.Exit(0);
+            }
+
+            if (opciones > 3)
+            {
+                Console.Clear();
+                Console.WriteLine("Opcion invalida");
+                Main(args);
+            }
+                Console.ReadKey();
+
+        }
+    }
+}
